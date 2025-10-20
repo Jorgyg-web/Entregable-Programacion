@@ -239,25 +239,12 @@ def menu_actualizar_equipo():
     team = r.json()
 
     nombre_actual = team.get("nombre")
-    partidos_actual = int(team.get("partidos", 0))
-    victorias_actual = int(team.get("victorias", 0))
+ 
 
-    print(f"\nEquipo actual:")
-    print(f"Nombre: {nombre_actual}")
-    print(f"Partidos: {partidos_actual}")
-    print(f"Victorias: {victorias_actual}")
-
-    print("\n¿Qué deseas actualizar?")
-    print("1) Nombre")
-    print("2) Partidos")
-    print("3) Victorias")
-    print("4) Cancelar")
-    op = input("Selecciona opción: ").strip()
+    op = input("Cambiar nombre a equipo: ").strip()
 
     payload = {
         "nombre": nombre_actual,
-        "partidos": partidos_actual,
-        "victorias": victorias_actual,
     }
 
     if op == "1":
